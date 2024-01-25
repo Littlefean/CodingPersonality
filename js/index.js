@@ -61,28 +61,29 @@ window.onload = function () {
 
     console.log(finalTag);
     console.log(potentialTag);
-    const bindElement = (element, tag, name, describe) => {
+    const bindElement = (element, tag, jsonData) => {
       element.querySelector(".tag").innerHTML = tag;
-      element.querySelector(".name").innerHTML = name;
+      element.querySelector(".name").innerHTML = jsonData.name;
       element.querySelector("img").src = `./img/${tag}.png`;
-      element.querySelector("img").alt = name;
-      element.querySelector(".describe").innerHTML = describe;
+      element.querySelector("img").alt = jsonData.name;
+      element.querySelector(".describe").innerHTML = jsonData.describe;
+      element.querySelector(".motto").innerHTML = jsonData.motto;
+      element.querySelector(".advantage").innerHTML = jsonData.advantage;
+      element.querySelector(".inferiority").innerHTML = jsonData.inferiority;
+      element.querySelector(".recommendation").innerHTML =
+        jsonData.recommendation;
     };
 
     const finalResultElement = document.querySelector("article.result .final");
-    const potentialResultElement = document.querySelector("article.result .potential");
-    console.log(potentialResultElement);
-    bindElement(
-      finalResultElement,
-      finalTag,
-      PERSONALITY[finalTag].name,
-      PERSONALITY[finalTag].describe
+    const potentialResultElement = document.querySelector(
+      "article.result .potential"
     );
+    console.log(potentialResultElement);
+    bindElement(finalResultElement, finalTag, PERSONALITY[finalTag]);
     bindElement(
       potentialResultElement,
       potentialTag,
-      PERSONALITY[potentialTag].name,
-      PERSONALITY[potentialTag].describe
+      PERSONALITY[potentialTag]
     );
   };
 };

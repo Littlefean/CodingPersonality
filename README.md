@@ -8,27 +8,31 @@
 
 我们可以根据四个维度来分成16个编程性格：
 
-1. 速度 - 质量  R (Rapid) vs. Q (Quality)
 
-   是喜欢快速开发，还是喜欢保证质量慢点
 
-   
+**抽象 - 形象  A (Abstract) vs. V (Visual)**
 
-2. 性能 - 可读性  P (Performance) vs. C (Readability)
+更喜欢抽象的逻辑架构还是更喜欢形象的交互和界面
 
-   是更看重性能还是更看重代码可读性
+**熟悉 - 探索  F (Familiar) vs. E (Exploration)**
 
-   
+更喜欢用熟悉的模式开发还是更喜欢探索新事物。
 
-3. 熟悉 - 探索  F (Familiar) vs. E (Exploration)
+**速度 - 质量  R (Rapid) vs. Q (Quality)**
 
-   更喜欢用熟悉的模式开发还是更喜欢探索新事物。
+是喜欢快速开发，还是喜欢保证质量慢点
 
-   
+**性能 - 可读性  P (Performance) vs. C (Readability)**
 
-4. 抽象 - 形象  A (Abstract) vs. V (Visual)
+是更看重性能还是更看重代码可读性
 
-   更喜欢抽象的逻辑架构还是更喜欢形象的交互和界面
+
+
+
+
+
+
+
 
 ## 项目可能的意义
 
