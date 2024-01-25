@@ -1,11 +1,11 @@
 /**
  * 题目类
- * 在此js被加载之前请先注意加载personality.js文件。引用到内部的一个全局变量
+ * 
  */
 class Question {
-  constructor(content) {
+  constructor(staticObject) {
     // 题目
-    this.content = content;
+    this.staticObject = staticObject;
     // 当前用户选择的分值
     this.currentValue = 0;
     // 对应的element
@@ -29,11 +29,12 @@ class Question {
     // 题目
     let content = document.createElement("p");
     content.classList.add("content");
-    content.innerText = this.content;
+    content.innerText = this.staticObject.content;
     element.appendChild(content);
     // 同意
     let spanAgree = document.createElement('span');
     spanAgree.classList.add("describe");
+    spanAgree.classList.add("agree");
     spanAgree.innerText = '同意';
     element.appendChild(spanAgree);
 
@@ -41,11 +42,11 @@ class Question {
     let buttonList = document.createElement("div");
     buttonList.classList.add("buttons");
     for (let i = 0; i < 7; i++) {
-      // 生成每个按钮
+      // 生成每个按钮   
       let btn = document.createElement("button");
       btn.classList.add(`button-${i}`);
       btn.onclick = () => {
-        this.currentValue = i - 3;
+        this.currentValue = -(i - 3); // 左侧同意，右侧反对
         // 修改样式
         for (let otherBtn of buttonList.children) {
           otherBtn.classList.remove('activate');
@@ -59,6 +60,7 @@ class Question {
     // 反对
     let spanDisagree = document.createElement('span');
     spanDisagree.classList.add("describe");
+    spanDisagree.classList.add("disagree");
     spanDisagree.innerText = '反对';
     element.appendChild(spanDisagree);
 

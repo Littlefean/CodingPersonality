@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // outline: solid 1px;
 }
 a {
   text-decoration: none;
@@ -11,9 +12,17 @@ button {
 }
 
 body {
+  @NavHeight: 60px;
+
   nav {
     text-align: center;
-    height: 60px;
+    height: @NavHeight;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 50;
+    outline: solid 2px #33a474;
+
     a {
       // line-height: 2em;
       height: 60px;
@@ -24,7 +33,8 @@ body {
   header {
     background-color: #33a474;
     color: white;
-    padding: 20px 0;
+    padding: 40px 0;
+    padding-top: @NavHeight + 40px;
     margin-bottom: 30px;
     h1 {
       text-align: center;
@@ -37,8 +47,13 @@ body {
   }
 
   main {
+    @green: #33a474;
+    @purple: #88619a;
+    @gray: #9b9faa;
+
     section {
       text-align: center;
+      margin: 40px 0;
       p {
         font-size: 20px;
         font-weight: bolder;
@@ -46,15 +61,29 @@ body {
       }
       .describe {
         display: inline-block;
+        font-size: 20px;
+        font-weight: bolder;
+        height: 100px;
+        line-height: 100px;
+        color: @gray;
+        &.agree {
+          color: @green;
+        }
+        &.disagree {
+          color: @purple;
+        }
       }
+
       .buttons {
         width: 50%;
         // margin: 0 auto;
         height: 100px;
+        line-height: 100px;
         display: inline-block;
         button {
           min-width: 50px;
           min-height: 50px;
+          line-height: 100px;
           border-radius: 50%;
           margin: 0 15px;
           border: solid 3px;
@@ -67,33 +96,33 @@ body {
         .button-0,
         .button-1,
         .button-2 {
-          color: #33a474;
+          color: @green;
           &:hover {
-            background-color: #33a474;
+            background-color: @green;
           }
           &.activate {
-            background-color: #33a474;
+            background-color: @green;
           }
         }
 
         .button-4,
         .button-5,
         .button-6 {
-          color: #88619a;
+          color: @purple;
           &:hover {
-            background-color: #88619a;
+            background-color: @purple;
           }
           &.activate {
-            background-color: #88619a;
+            background-color: @purple;
           }
         }
         .button-3 {
-          color: #9b9faa;
+          color: @gray;
           &:hover {
-            background-color: #9b9faa;
+            background-color: @gray;
           }
           &.activate {
-            background-color: #9b9faa;
+            background-color: @gray;
           }
         }
 
@@ -114,5 +143,36 @@ body {
         }
       }
     }
+  }
+
+  button.submit {
+    display: block;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 100px;
+  }
+  article.result {
+    color: #576071;
+    h2,
+    h3,
+    h4 {
+      text-align: center;
+      line-height: 2em;
+    }
+    .final,
+    .potential {
+      width: 100%;
+      img {
+        display: block;
+        width: 200px;
+        margin: 10px auto;
+      }
+    }
+  }
+  .attention {
+    text-align: center;
+    line-height: 2em;
+    margin-bottom: 40px;
   }
 }
