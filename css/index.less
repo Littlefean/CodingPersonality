@@ -11,6 +11,10 @@ button {
   cursor: pointer;
 }
 
+@green: #33a474;
+@purple: #88619a;
+@gray: #9b9faa;
+
 body {
   @NavHeight: 60px;
 
@@ -21,7 +25,7 @@ body {
     position: fixed;
     background-color: white;
     z-index: 50;
-    outline: solid 2px #33a474;
+    outline: solid 2px @green;
 
     a {
       // line-height: 2em;
@@ -31,7 +35,7 @@ body {
     }
   }
   header {
-    background-color: #33a474;
+    background-color: @green;
     color: white;
     padding: 40px 0;
     padding-top: @NavHeight + 40px;
@@ -47,10 +51,6 @@ body {
   }
 
   main {
-    @green: #33a474;
-    @purple: #88619a;
-    @gray: #9b9faa;
-
     section {
       text-align: center;
       margin: 40px 0;
@@ -166,6 +166,46 @@ body {
     }
     p {
       margin-bottom: 2em;
+    }
+    .range-area {
+      text-align: center;
+      p {
+        line-height: 1.5em;
+        margin: 0;
+        span {
+          font-weight: bolder;
+          &.left {
+            color: @purple;
+          }
+          &.right {
+            color: @green;
+          }
+        }
+      }
+      div {
+        height: 1em;
+        width: 25%;
+        outline: solid 1px;
+        margin: 0 auto;
+        margin-bottom: 0.5em;
+        text-align: left;
+        overflow: hidden;
+        background: black;
+        span {
+          outline: solid 1px;
+          height: 1em;
+          display: block;
+          float: left;
+          filter: blur(5px) brightness(1.5);
+          
+          &.left {
+            background-color: @purple;
+          }
+          &.right {
+            background-color: @green;
+          }
+        }
+      }
     }
     .final,
     .potential {

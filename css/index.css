@@ -157,6 +157,45 @@ body article.result h3 {
 body article.result p {
   margin-bottom: 2em;
 }
+body article.result .range-area {
+  text-align: center;
+}
+body article.result .range-area p {
+  line-height: 1.5em;
+  margin: 0;
+}
+body article.result .range-area p span {
+  font-weight: bolder;
+}
+body article.result .range-area p span.left {
+  color: #88619a;
+}
+body article.result .range-area p span.right {
+  color: #33a474;
+}
+body article.result .range-area div {
+  height: 1em;
+  width: 25%;
+  outline: solid 1px;
+  margin: 0 auto;
+  margin-bottom: 0.5em;
+  text-align: left;
+  overflow: hidden;
+  background: black;
+}
+body article.result .range-area div span {
+  outline: solid 1px;
+  height: 1em;
+  display: block;
+  float: left;
+  filter: blur(5px) brightness(1.5);
+}
+body article.result .range-area div span.left {
+  background-color: #88619a;
+}
+body article.result .range-area div span.right {
+  background-color: #33a474;
+}
 body article.result .final,
 body article.result .potential {
   width: 100%;

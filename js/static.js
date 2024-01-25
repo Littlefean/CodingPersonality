@@ -87,6 +87,7 @@ const QUESTION_ARRAY = [
       if (x > 0) {
         return -0.01;
       }
+      return 0;
     },
   },
   {

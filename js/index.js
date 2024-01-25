@@ -61,7 +61,8 @@ window.onload = function () {
 
     console.log(finalTag);
     console.log(potentialTag);
-    const bindElement = (element, tag, jsonData) => {
+    // 绑定函数
+    const bindElement = (element, tag, jsonData, result) => {
       element.querySelector(".tag").innerHTML = tag;
       element.querySelector(".name").innerHTML = jsonData.name;
       element.querySelector("img").src = `./img/${tag}.png`;
@@ -72,6 +73,29 @@ window.onload = function () {
       element.querySelector(".inferiority").innerHTML = jsonData.inferiority;
       element.querySelector(".recommendation").innerHTML =
         jsonData.recommendation;
+      const sigmoid = (x) => 1 / (1 + Math.exp(-x));
+
+      for (const dimension of dimensionList) {
+        const rightRate = sigmoid(result[dimension]);
+        const leftRate = 1 - rightRate;
+        // 填充文字
+        {
+          const dimensionEle = element.querySelector(`p.${dimension}`);
+          const leftEle = dimensionEle.querySelector(".left");
+          const rightEle = dimensionEle.querySelector(".right");
+          leftEle.innerHTML = `${(leftRate * 100).toFixed(1)}%`;
+          rightEle.innerHTML = `${(rightRate * 100).toFixed(1)}%`;
+        }
+
+        // 填充进度条
+        {
+          const dimensionEle = element.querySelector(`div.${dimension}`);
+          const leftEle = dimensionEle.querySelector(".left");
+          const rightEle = dimensionEle.querySelector(".right");
+          leftEle.style.width = `${leftRate * 100}%`;
+          rightEle.style.width = `${rightRate * 100}%`;
+        }
+      }
     };
 
     const finalResultElement = document.querySelector("article.result .final");
@@ -79,11 +103,17 @@ window.onload = function () {
       "article.result .potential"
     );
     console.log(potentialResultElement);
-    bindElement(finalResultElement, finalTag, PERSONALITY[finalTag]);
+    bindElement(
+      finalResultElement,
+      finalTag,
+      PERSONALITY[finalTag],
+      finalResult
+    );
     bindElement(
       potentialResultElement,
       potentialTag,
-      PERSONALITY[potentialTag]
+      PERSONALITY[potentialTag],
+      potentialResult
     );
   };
 };
