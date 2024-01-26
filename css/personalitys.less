@@ -1,0 +1,69 @@
+@import "./utils.less";
+
+body {
+  h1.main-title {
+    padding-top: @NavHeight;
+    line-height: 4em;
+    text-align: center;
+    font-size: 50px;
+    color: rgb(52, 60, 75);
+  }
+  main {
+    margin: 0 auto;
+    // width: 80%;
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+    // 每一种类型的容器
+    section {
+      text-align: center;
+      padding: 20px 0;
+      vertical-align: text-top;
+      h2 {
+        color: white;
+        font-size: 45px;
+      }
+      &.AP {
+        background-color: rgba(183, 127, 209, 0.5);
+        color: #88619a;
+      }
+      &.AC {
+        background-color: rgba(127, 174, 209, 0.5);
+        color: #4298b4;
+      }
+      &.VC {
+        background-color: rgba(145, 209, 127, 0.5);
+        color: #33a474;
+      }
+      &.VP {
+        background-color: rgb(215, 203, 178);
+        color: #8d681a;
+      }
+      .person-card {
+        display: inline-block;
+        margin: 20px;
+        width: 200px;
+        // height: 550px;
+        img {
+          width: 200px;
+          border-radius: 50%;
+        }
+        h3,
+        h4 {
+          line-height: 2em;
+        }
+        h3 {
+          font-size: 25px;
+        }
+        h4 {
+          color: #343c4b;
+        }
+        p {
+          color: #54575c;
+        }
+      }
+    }
+  }
+}

@@ -9,20 +9,6 @@ a {
 button {
   cursor: pointer;
 }
-body nav {
-  text-align: center;
-  height: 60px;
-  width: 100%;
-  position: fixed;
-  background-color: white;
-  z-index: 50;
-  outline: solid 2px #33a474;
-}
-body nav a {
-  height: 60px;
-  line-height: 60px;
-  margin: 0 20px;
-}
 body header {
   background-color: #33a474;
   color: white;
@@ -220,12 +206,4 @@ body article.result .potential img {
   display: block;
   width: 200px;
   margin: 10px auto;
-}
-body .attention {
-  background-color: #2b2b2b;
-  color: white;
-  text-align: center;
-  line-height: 2em;
-  margin-top: 20px;
-  padding: 40px 0;
 }

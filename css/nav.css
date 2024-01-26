@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+nav {
+  text-align: center;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  z-index: 50;
+  outline: solid 2px #33a474;
+}
+nav a {
+  height: 60px;
+  line-height: 60px;
+  margin: 0 20px;
+}

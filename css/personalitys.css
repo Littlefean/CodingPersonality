@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+body h1.main-title {
+  padding-top: 60px;
+  line-height: 4em;
+  text-align: center;
+  font-size: 50px;
+  color: #343c4b;
+}
+body main {
+  margin: 0 auto;
+}
+body main h1,
+body main h2 {
+  text-align: center;
+}
+body main section {
+  text-align: center;
+  padding: 20px 0;
+  vertical-align: text-top;
+}
+body main section h2 {
+  color: white;
+  font-size: 45px;
+}
+body main section.AP {
+  background-color: rgba(183, 127, 209, 0.5);
+  color: #88619a;
+}
+body main section.AC {
+  background-color: rgba(127, 174, 209, 0.5);
+  color: #4298b4;
+}
+body main section.VC {
+  background-color: rgba(145, 209, 127, 0.5);
+  color: #33a474;
+}
+body main section.VP {
+  background-color: #d7cbb2;
+  color: #8d681a;
+}
+body main section .person-card {
+  display: inline-block;
+  margin: 20px;
+  width: 200px;
+}
+body main section .person-card img {
+  width: 200px;
+  border-radius: 50%;
+}
+body main section .person-card h3,
+body main section .person-card h4 {
+  line-height: 2em;
+}
+body main section .person-card h3 {
+  font-size: 25px;
+}
+body main section .person-card h4 {
+  color: #343c4b;
+}
+body main section .person-card p {
+  color: #54575c;
+}

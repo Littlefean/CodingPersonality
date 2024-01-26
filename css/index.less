@@ -1,39 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  // outline: solid 1px;
-}
-a {
-  text-decoration: none;
-}
-button {
-  cursor: pointer;
-}
-
-@green: #33a474;
-@purple: #88619a;
-@gray: #9b9faa;
+@import "./utils.less";
 
 body {
-  @NavHeight: 60px;
-
-  nav {
-    text-align: center;
-    height: @NavHeight;
-    width: 100%;
-    position: fixed;
-    background-color: white;
-    z-index: 50;
-    outline: solid 2px @green;
-
-    a {
-      // line-height: 2em;
-      height: 60px;
-      line-height: 60px;
-      margin: 0 20px;
-    }
-  }
   header {
     background-color: @green;
     color: white;
@@ -229,13 +196,5 @@ body {
         margin: 10px auto;
       }
     }
-  }
-  .attention {
-    background-color: #2b2b2b;
-    color: white;
-    text-align: center;
-    line-height: 2em;
-    margin-top: 20px;
-    padding: 40px 0;
   }
 }
