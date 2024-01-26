@@ -1,6 +1,6 @@
 /**
  * 题目类
- * 
+ *
  */
 class Question {
   constructor(staticObject) {
@@ -11,6 +11,8 @@ class Question {
     // 对应的element
     this.element = null;
     this.generateElement();
+    // 题目是否是作答了的状态
+    this.isFinish = false;
   }
 
   /**
@@ -32,36 +34,38 @@ class Question {
     content.innerText = this.staticObject.content;
     element.appendChild(content);
     // 同意
-    let spanAgree = document.createElement('span');
+    let spanAgree = document.createElement("span");
     spanAgree.classList.add("describe");
     spanAgree.classList.add("agree");
-    spanAgree.innerText = '同意';
+    spanAgree.innerText = "同意";
     element.appendChild(spanAgree);
 
     // 多个按钮组
     let buttonList = document.createElement("div");
     buttonList.classList.add("buttons");
     for (let i = 0; i < 7; i++) {
-      // 生成每个按钮   
+      // 生成每个按钮
       let btn = document.createElement("button");
       btn.classList.add(`button-${i}`);
       btn.onclick = () => {
         this.currentValue = -(i - 3); // 左侧同意，右侧反对
         // 修改样式
         for (let otherBtn of buttonList.children) {
-          otherBtn.classList.remove('activate');
+          otherBtn.classList.remove("activate");
         }
-        btn.classList.add('activate');
+        btn.classList.add("activate");
+        // 只要一点，就算作答了
+        this.isFinish = true;
       };
       buttonList.appendChild(btn);
     }
     element.appendChild(buttonList);
 
     // 反对
-    let spanDisagree = document.createElement('span');
+    let spanDisagree = document.createElement("span");
     spanDisagree.classList.add("describe");
     spanDisagree.classList.add("disagree");
-    spanDisagree.innerText = '反对';
+    spanDisagree.innerText = "反对";
     element.appendChild(spanDisagree);
 
     this.element = element;

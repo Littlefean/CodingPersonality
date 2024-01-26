@@ -16,6 +16,12 @@ window.onload = function () {
   const submitButton = document.querySelector(".submit");
   submitButton.onclick = function () {
     // todo 检查所有题目是否填上了。
+    for (const question of questionObjectList) {
+      if (!question.isFinish) {
+        alert("还有题目没有做完");
+        return;
+      }
+    }
 
     const finalResult = {
       AV: 0,
