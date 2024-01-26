@@ -8,7 +8,7 @@
 
 我们可以根据四个维度来分成16个编程性格：
 
-
+体验地址，githubPages：https://littlefean.github.io/CodingPersonality/
 
 **抽象 - 形象  A (Abstract) vs. V (Visual)**
 

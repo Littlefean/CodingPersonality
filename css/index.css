@@ -207,3 +207,32 @@ body article.result .potential img {
   width: 200px;
   margin: 10px auto;
 }
+@media (max-width: 480px) {
+  body main section p {
+    padding: 0 5px;
+  }
+  body main section .input-area .buttons button {
+    margin: 0 2px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  body main section p {
+    padding: 0 5px;
+  }
+  body main section .input-area .buttons button {
+    margin: 0 2px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  body main section .input-area .buttons button {
+    margin: 0 2px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+}
+@media (min-width: 1024px) {
+}

@@ -198,3 +198,67 @@ body {
     }
   }
 }
+
+@media (max-width: @phone) {
+  // 手机样式
+  body {
+    main {
+      section {
+        p {
+          padding: 0 5px;
+        }
+        .input-area {
+          .buttons {
+            button {
+              margin: 0 2px;
+              min-width: 25px;
+              min-height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: @phone) and (max-width: @tablet) {
+  body {
+    main {
+      section {
+        p {
+          padding: 0 5px;
+        }
+        .input-area {
+          .buttons {
+            button {
+              margin: 0 2px;
+              min-width: 25px;
+              min-height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: @tablet) and (max-width: @desktop) {
+  // 平板样式
+  body {
+    main {
+      section {
+        .input-area {
+          .buttons {
+            button {
+              margin: 0 2px;
+              min-width: 25px;
+              min-height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: @desktop) {
+  // 桌面样式
+}
