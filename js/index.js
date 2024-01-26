@@ -22,6 +22,8 @@ window.onload = function () {
         return;
       }
     }
+    // 将结果区域显示
+    document.querySelector("article.result").style.display = "block";
 
     const finalResult = {
       AV: 0,

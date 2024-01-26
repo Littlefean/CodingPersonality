@@ -41,97 +41,114 @@ body header p {
 body main section {
   text-align: center;
   margin: 40px 0;
+  transition: all 0.2s;
+  vertical-align: middle;
 }
-body main section p {
+body main section p.content {
   font-size: 20px;
+  line-height: 2em;
   font-weight: bolder;
   color: #576071;
 }
-body main section .describe {
-  display: inline-block;
+body main section .input-area {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  /* 水平方向排列 */
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+}
+body main section .input-area .describe {
+  display: inline;
   font-size: 20px;
   font-weight: bolder;
-  height: 100px;
-  line-height: 100px;
+  margin: 0 5px;
   color: #9b9faa;
 }
-body main section .describe.agree {
+body main section .input-area .describe.agree {
   color: #33a474;
 }
-body main section .describe.disagree {
+body main section .input-area .describe.disagree {
   color: #88619a;
 }
-body main section .buttons {
-  width: 50%;
+body main section .input-area .buttons {
+  display: inline-flex;
+  flex-direction: row;
+  /* 默认值是 row，可以省略 */
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
   height: 100px;
   line-height: 100px;
-  display: inline-block;
 }
-body main section .buttons button {
+body main section .input-area .buttons button {
   min-width: 50px;
   min-height: 50px;
   line-height: 100px;
   border-radius: 50%;
-  margin: 0 15px;
+  margin: 0 5px;
   border: solid 3px;
   background-color: transparent;
   transition: all 0.1s;
 }
-body main section .buttons .activate {
+body main section .input-area .buttons .activate {
   box-shadow: 0 0 10px;
 }
-body main section .buttons .button-0,
-body main section .buttons .button-1,
-body main section .buttons .button-2 {
+body main section .input-area .buttons .button-0,
+body main section .input-area .buttons .button-1,
+body main section .input-area .buttons .button-2 {
   color: #33a474;
 }
-body main section .buttons .button-0:hover,
-body main section .buttons .button-1:hover,
-body main section .buttons .button-2:hover {
+body main section .input-area .buttons .button-0:hover,
+body main section .input-area .buttons .button-1:hover,
+body main section .input-area .buttons .button-2:hover {
   background-color: #33a474;
 }
-body main section .buttons .button-0.activate,
-body main section .buttons .button-1.activate,
-body main section .buttons .button-2.activate {
+body main section .input-area .buttons .button-0.activate,
+body main section .input-area .buttons .button-1.activate,
+body main section .input-area .buttons .button-2.activate {
   background-color: #33a474;
 }
-body main section .buttons .button-4,
-body main section .buttons .button-5,
-body main section .buttons .button-6 {
+body main section .input-area .buttons .button-4,
+body main section .input-area .buttons .button-5,
+body main section .input-area .buttons .button-6 {
   color: #88619a;
 }
-body main section .buttons .button-4:hover,
-body main section .buttons .button-5:hover,
-body main section .buttons .button-6:hover {
+body main section .input-area .buttons .button-4:hover,
+body main section .input-area .buttons .button-5:hover,
+body main section .input-area .buttons .button-6:hover {
   background-color: #88619a;
 }
-body main section .buttons .button-4.activate,
-body main section .buttons .button-5.activate,
-body main section .buttons .button-6.activate {
+body main section .input-area .buttons .button-4.activate,
+body main section .input-area .buttons .button-5.activate,
+body main section .input-area .buttons .button-6.activate {
   background-color: #88619a;
 }
-body main section .buttons .button-3 {
+body main section .input-area .buttons .button-3 {
   color: #9b9faa;
 }
-body main section .buttons .button-3:hover {
+body main section .input-area .buttons .button-3:hover {
   background-color: #9b9faa;
 }
-body main section .buttons .button-3.activate {
+body main section .input-area .buttons .button-3.activate {
   background-color: #9b9faa;
 }
-body main section .buttons .button-0,
-body main section .buttons .button-6 {
+body main section .input-area .buttons .button-0,
+body main section .input-area .buttons .button-6 {
   transform: scale(1);
 }
-body main section .buttons .button-1,
-body main section .buttons .button-5 {
+body main section .input-area .buttons .button-1,
+body main section .input-area .buttons .button-5 {
   transform: scale(0.85);
 }
-body main section .buttons .button-2,
-body main section .buttons .button-4 {
+body main section .input-area .buttons .button-2,
+body main section .input-area .buttons .button-4 {
   transform: scale(0.7);
 }
-body main section .buttons .button-3 {
+body main section .input-area .buttons .button-3 {
   transform: scale(0.55);
 }
 body button.submit {
@@ -176,7 +193,6 @@ body article.result .range-area p span.right {
 body article.result .range-area div {
   height: 1em;
   width: 25%;
-  outline: solid 1px;
   margin: 0 auto;
   margin-bottom: 0.5em;
   text-align: left;
@@ -184,7 +200,6 @@ body article.result .range-area div {
   background: black;
 }
 body article.result .range-area div span {
-  outline: solid 1px;
   height: 1em;
   display: block;
   float: left;
