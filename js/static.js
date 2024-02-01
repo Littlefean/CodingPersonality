@@ -199,8 +199,13 @@ const QUESTION_ARRAY = [
         LazyCoder: x => -4 * x,
     },
     {
-        content: '你愿意牺牲一点身体健康来换取很多技能提升',
+        content: '你期望更高的薪资而不是更少的工作',
         EfficiencyMaster: x => 3 * x,
+        LazyCoder: x => -3 * x,
+    },
+    {
+        content: '你愿意牺牲一点身体健康来换取很多技能提升',
+        EfficiencyMaster: x => 2 * x,
         LazyCoder: x => -4 * x,
     },
     {
@@ -218,8 +223,6 @@ const QUESTION_ARRAY = [
         EfficiencyMaster: x => -1.8 * x,
         LazyCoder: x => 1.8 * x,
     },
-
-
 ];
 
 const PERSONALITY = {
