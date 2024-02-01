@@ -1,5 +1,4 @@
 window.onload = function () {
-  console.log(123456);
   // 计算分析类  AP
   // 后端业务类  AC
   // 前端交互类  VP
@@ -14,6 +13,11 @@ window.onload = function () {
         typeSection.appendChild(buildPersonCardElement(personTag));
       }
     }
+  }
+  // 彩蛋人格
+  const EasterEggSection = document.querySelector(`main .EasterEgg`);
+  for (let typeName of ['LazyCoder', 'EfficiencyMaster', 'Hacker', 'BugHunter']) {
+    EasterEggSection.appendChild(buildPersonCardElement(typeName));
   }
 };
 

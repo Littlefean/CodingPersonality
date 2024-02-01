@@ -150,6 +150,76 @@ const QUESTION_ARRAY = [
         AV: (x) => -0.33 * x,
         FE: (x) => -0.33 * x,
     },
+    {
+        content: '你对细节非常关注',
+        BugHunter: x => 3 * x,
+        Hacker: x => 0.2 * x,
+    },
+    {
+        content: '你在发现他人代码中的错误时感到满足和有趣',
+        BugHunter: x => 3 * x,
+        Hacker: x => 2 * x,
+    },
+    {
+        content: '你喜欢参与测试和调试过程，而不仅仅是编写代码',
+        BugHunter: x => 3 * x,
+        Hacker: x => 1 * x,
+    },
+    {
+        content: '你经常追踪问题的根本原因，而不只是解决表面问题',
+        BugHunter: x => 3 * x,
+        Hacker: x => 2 * x,
+    },
+    {
+        content: '当和别人合作发生不愉快时，这种不愉快更容易悲伤而不是愤怒',
+        Hacker: x => -3 * x,  // 黑客具有攻击行为
+    },
+    {
+        content: '你喜欢网络通信和安全方面的内容，并做过一些实践',
+        Hacker: x => 4 * x,
+    },
+    {
+        content: '你认为合法的网络渗透测试是一种不道德行为',
+        Hacker: x => -4 * x,
+    },
+    {
+        content: '当你发现一个系统存在漏洞时，你第一反应是赶快通知系统管理员解决这个bug',
+        Hacker: x => -4 * x,
+        BugHunter: x => -3 * x,
+        RQ: (x) => -0.05 * x,
+    },
+    {
+        content: '你认为节假日是更好的时间来学习新技能，超越别人',
+        EfficiencyMaster: x => 3 * x,
+        LazyCoder: x => -1 * x,
+    },
+    {
+        content: '你大多数时间都在写代码，甚至在别人娱乐的时候也在写代码',
+        EfficiencyMaster: x => 3 * x,
+        LazyCoder: x => -4 * x,
+    },
+    {
+        content: '你愿意牺牲一点身体健康来换取很多技能提升',
+        EfficiencyMaster: x => 3 * x,
+        LazyCoder: x => -4 * x,
+    },
+    {
+        content: '你认为在工作中保持轻松的心态比完成更多任务更为重要',
+        EfficiencyMaster: x => -3 * x,
+        LazyCoder: x => 3 * x,
+    },
+    {
+        content: '你认为在工作中选择轻松项目是一种逃避',
+        EfficiencyMaster: x => 1.5 * x,
+        LazyCoder: x => -1.5 * x,
+    },
+    {
+        content: '你认为在工作中休息片刻只会降低效率，没有实际意义',
+        EfficiencyMaster: x => -1.8 * x,
+        LazyCoder: x => 1.8 * x,
+    },
+
+
 ];
 
 const PERSONALITY = {
@@ -378,4 +448,36 @@ const PERSONALITY = {
     平衡质量和可读性： 在追求高质量的代码的同时，确保代码的可读性，方便框架的使用和维护。
     VEQC型程序员作为前端框架开拓者，具备创新性的前端框架开发能力，需要在实践中不断平衡创新性和框架的实用性。`,
     },
+    LazyCoder: {
+        name: '摸鱼者',
+        describe: '摸摸fish，喜欢轻松自在，擅长规避繁琐',
+        motto: `人间清醒、悠闲而不失效率`,
+        advantage: `快速完成任务，保持轻松的工作氛围`,
+        inferiority: `被发现了可能会出事`,
+        recommendation: `注意保持任务的整体质量，不要牺牲过多细节，留心监控软件，摄像头，必要时使用手机热点网络`
+    },
+    EfficiencyMaster: {
+        name: '卷王',
+        describe: '以高效为己任，追求工作和学习的极致效果',
+        motto: `卷死别人，成就自己，效率即王道`,
+        advantage: `学习能力强`,
+        inferiority: `注意身体`,
+        recommendation: `建议平衡生活和工作，注意锻炼和饮食`
+    },
+    Hacker: {
+        name: '黑客',
+        describe: '有着丰富的网络攻防知识和经验，具备独特的技术洞察力',
+        motto: `游走在网络的世界中`,
+        advantage: `学习能力强`,
+        inferiority: `可能忽视一些伦理道德因素，在做项目时有时可能过于谨慎，影响创新`,
+        recommendation: `建议在学习和实践计算机网络技术的同时也关注计算机安全法律相关内容，在确保系统安全的前提下，鼓励创新思维`
+    },
+    BugHunter: {
+        name: '找bug专家',
+        describe: '对细节敏感，善于发现并解决问题',
+        motto: `每个bug都是一个学习的机会`,
+        advantage: `准确发现和解决问题，提高代码质量`,
+        inferiority: `可能过于关注细节而忽略整体进度`,
+        recommendation: `在保持对细节关注的同时，注意整体任务的推进`
+    }
 };

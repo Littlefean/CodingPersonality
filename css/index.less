@@ -7,10 +7,12 @@ body {
     padding: 40px 0;
     padding-top: @NavHeight + 40px;
     margin-bottom: 30px;
+
     h1 {
       text-align: center;
       line-height: 2em;
     }
+
     p {
       text-align: center;
       line-height: 2em;
@@ -31,6 +33,7 @@ body {
         font-weight: bolder;
         color: #576071;
       }
+
       // 输入区
       .input-area {
         height: 100px;
@@ -45,9 +48,11 @@ body {
           font-weight: bolder;
           margin: 0 5px;
           color: @gray;
+
           &.agree {
             color: @green;
           }
+
           &.disagree {
             color: @purple;
           }
@@ -61,6 +66,7 @@ body {
           height: 100px;
 
           line-height: 100px;
+
           button {
             min-width: 50px;
             min-height: 50px;
@@ -71,16 +77,20 @@ body {
             background-color: transparent;
             transition: all 0.1s;
           }
+
           .activate {
             box-shadow: 0 0 10px;
           }
+
           .button-0,
           .button-1,
           .button-2 {
             color: @green;
+
             &:hover {
               background-color: @green;
             }
+
             &.activate {
               background-color: @green;
             }
@@ -90,18 +100,23 @@ body {
           .button-5,
           .button-6 {
             color: @purple;
+
             &:hover {
               background-color: @purple;
             }
+
             &.activate {
               background-color: @purple;
             }
           }
+
           .button-3 {
             color: @gray;
+
             &:hover {
               background-color: @gray;
             }
+
             &.activate {
               background-color: @gray;
             }
@@ -111,14 +126,17 @@ body {
           .button-6 {
             transform: scale(1);
           }
+
           .button-1,
           .button-5 {
             transform: scale(0.85);
           }
+
           .button-2,
           .button-4 {
             transform: scale(0.7);
           }
+
           .button-3 {
             transform: scale(0.55);
           }
@@ -134,36 +152,46 @@ body {
     font-size: 30px;
     border-radius: 100px;
   }
+
   article.result {
     color: #576071;
     width: 60%;
     margin: 0 auto;
+
     h2,
     h4 {
       text-align: center;
       line-height: 2em;
     }
+
     h3 {
       line-height: 2em;
     }
+
     p {
       margin-bottom: 2em;
     }
+
     .range-area {
       text-align: center;
+
       p {
         line-height: 1.5em;
         margin: 0;
+
         span {
           font-weight: bolder;
+
           &.left {
             color: @purple;
           }
+
           &.right {
             color: @green;
           }
         }
       }
+
       div {
         height: 1em;
         width: 25%;
@@ -172,6 +200,7 @@ body {
         text-align: left;
         overflow: hidden;
         background: black;
+
         span {
           height: 1em;
           display: block;
@@ -181,15 +210,19 @@ body {
           &.left {
             background-color: @purple;
           }
+
           &.right {
             background-color: @green;
           }
         }
       }
     }
+
     .final,
-    .potential {
+    .potential,
+    .easter-egg {
       width: 100%;
+
       img {
         display: block;
         width: 200px;
@@ -207,6 +240,7 @@ body {
         p {
           padding: 0 5px;
         }
+
         .input-area {
           .buttons {
             button {
@@ -220,6 +254,7 @@ body {
     }
   }
 }
+
 @media (min-width: @phone) and (max-width: @tablet) {
   body {
     main {
@@ -227,6 +262,7 @@ body {
         p {
           padding: 0 5px;
         }
+
         .input-area {
           .buttons {
             button {
@@ -240,6 +276,7 @@ body {
     }
   }
 }
+
 @media (min-width: @tablet) and (max-width: @desktop) {
   // 平板样式
   body {

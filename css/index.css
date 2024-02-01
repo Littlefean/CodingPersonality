@@ -198,11 +198,13 @@ body article.result .range-area div span.right {
   background-color: #33a474;
 }
 body article.result .final,
-body article.result .potential {
+body article.result .potential,
+body article.result .easter-egg {
   width: 100%;
 }
 body article.result .final img,
-body article.result .potential img {
+body article.result .potential img,
+body article.result .easter-egg img {
   display: block;
   width: 200px;
   margin: 10px auto;
@@ -234,5 +236,4 @@ body article.result .potential img {
     min-height: 25px;
   }
 }
-@media (min-width: 1024px) {
-}
+/*# sourceMappingURL=index.css.map */

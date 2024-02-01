@@ -15,7 +15,6 @@ window.onload = function () {
   // 做完题的加载方法
   const submitButton = document.querySelector(".submit");
   submitButton.onclick = function () {
-    // todo 检查所有题目是否填上了。
     for (const question of questionObjectList) {
       if (!question.isFinish) {
         alert("还有题目没有做完");
@@ -37,12 +36,21 @@ window.onload = function () {
       RQ: 0,
       PC: 0,
     };
+
+    const easterEggResult = {
+      LazyCoder: 0,
+      EfficiencyMaster: 0,
+      Hacker: 0,
+      BugHunter: 0,
+    }
     const dimensionList = ["AV", "FE", "RQ", "PC"];
+    const easterEggDimensionList = ['LazyCoder', 'EfficiencyMaster', 'Hacker', "BugHunter"];
+
     for (let question of questionObjectList) {
       console.log(question.currentValue);
+      let currentValue = question.currentValue;
 
       for (const dimension of dimensionList) {
-        let currentValue = question.currentValue;
         const f = question.staticObject[dimension];
         if (!f) {
           continue;
@@ -53,24 +61,40 @@ window.onload = function () {
           finalResult[dimension] += f(currentValue);
         }
       }
+
+      // 计算彩蛋人格，累加结果
+
+      for (const easterEggName of easterEggDimensionList) {
+        const f = question.staticObject[easterEggName];
+        if (!f) {
+          continue;
+        }
+        easterEggResult[easterEggName] += f(question.currentValue);
+      }
     }
     // 累加完毕
     console.log(finalResult);
     console.log(potentialResult);
+    console.log(easterEggResult);
 
     // 计算最终标签
     let finalTag = "";
+    // 以及潜在人格标签
     let potentialTag = "";
     for (const dimension of dimensionList) {
       finalTag += finalResult[dimension] > 0 ? dimension[1] : dimension[0];
       potentialTag +=
         potentialResult[dimension] > 0 ? dimension[1] : dimension[0];
     }
+    // 计算菜蛋人格 Tag，计算方式就是直接找出最大分
+    let easterEggTag = findMaxKey(easterEggResult);
+
 
     console.log(finalTag);
     console.log(potentialTag);
-    // 绑定函数
-    const bindElement = (element, tag, jsonData, result) => {
+    console.log(easterEggTag);
+
+    const bindBaseResultInElement = (element, tag, jsonData) => {
       element.querySelector(".tag").innerHTML = tag;
       element.querySelector(".name").innerHTML = jsonData.name;
       element.querySelector("img").src = `./img/${tag}.png`;
@@ -79,8 +103,18 @@ window.onload = function () {
       element.querySelector(".motto").innerHTML = jsonData.motto;
       element.querySelector(".advantage").innerHTML = jsonData.advantage;
       element.querySelector(".inferiority").innerHTML = jsonData.inferiority;
-      element.querySelector(".recommendation").innerHTML =
-        jsonData.recommendation;
+      element.querySelector(".recommendation").innerHTML = jsonData.recommendation;
+    }
+
+    /**
+     * 绑定函数
+     * @param element 要渲染的结果区域的盒子
+     * @param tag 标签字母代号
+     * @param jsonData PERSONALITY[tag]
+     * @param result
+     */
+    const bindElement = (element, tag, jsonData, result) => {
+      bindBaseResultInElement(element, tag, jsonData);
       const sigmoid = (x) => 1 / (1 + Math.exp(-x));
 
       for (const dimension of dimensionList) {
@@ -110,6 +144,8 @@ window.onload = function () {
     const potentialResultElement = document.querySelector(
       "article.result .potential"
     );
+
+
     console.log(potentialResultElement);
     bindElement(
       finalResultElement,
@@ -123,5 +159,27 @@ window.onload = function () {
       PERSONALITY[potentialTag],
       potentialResult
     );
+    // 绑定彩蛋人格
+    const easterEggResultElement = document.querySelector("article.result .easter-egg");
+    bindBaseResultInElement(easterEggResultElement, easterEggTag, PERSONALITY[easterEggTag]);
   };
 };
+
+/**
+ * 返回对象值最大的键
+ * @param obj
+ * @returns {null}
+ */
+function findMaxKey(obj) {
+    let maxKey = null;
+    let maxValue = -Infinity;
+
+    for (const key in obj) {
+        if (obj[key] > maxValue) {
+            maxValue = obj[key];
+            maxKey = key;
+        }
+    }
+
+    return maxKey;
+}

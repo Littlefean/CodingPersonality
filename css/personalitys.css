@@ -48,6 +48,10 @@ body main section.VP {
   background-color: #d7cbb2;
   color: #8d681a;
 }
+body main section.EasterEgg {
+  background-color: #d7b2b2;
+  color: #aa3535;
+}
 body main section .person-card {
   display: inline-block;
   margin: 20px;
@@ -70,3 +74,4 @@ body main section .person-card h4 {
 body main section .person-card p {
   color: #54575c;
 }
+/*# sourceMappingURL=personalitys.css.map */
